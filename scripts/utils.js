@@ -1,5 +1,6 @@
 const { ethers, upgrades, network } = require("hardhat")
-const { getImplementationAddress } = require('@openzeppelin/upgrades-core');
+const { getImplementationAddress } = require('@openzeppelin/upgrades-core')
+const { getSelectors, FacetCutAction } = require('diamond-util')
 const fs = require('fs')
 
 const updateABI = async (contractName)=>{
@@ -71,10 +72,28 @@ const verify = async (contractAddress, args = []) => {
     }
 }
 
+const deployDiamond = async (contractName, facets) => {
+	const contractDiamond = await deploy(contractName)
+	// const contractInitializer = await deploy("Initializer")
+	const diamondCuts = []
+    for(const facetName of facets) {
+        const facet = await deploy(facetName)
+        diamondCuts.push({
+            target: facet.address,
+            action: FacetCutAction.Add,
+            selectors: getSelectors(facet)
+        })
+    }
+	// const diamondCut = await getAt('ISolidStateDiamond', contractDiamond.address)
+    const initFunction = contractDiamond.interface.encodeFunctionData('init')
+	await (await contractDiamond.diamondCut(diamondCuts, contractDiamond.address, initFunction)).wait()
+    return contractDiamond
+}
+
 const sleep = async (ms) => {
     return new Promise(resolve => setTimeout(resolve, ms))
 }
 
 module.exports = {
-    getAt, deploy, deployProxy, upgradeProxy, sleep
+    getAt, deploy, deployProxy, deployDiamond, upgradeProxy, sleep
 }

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.13;
+pragma solidity ^0.8.0;
 
 struct Round {
     uint32 id;
@@ -20,18 +20,48 @@ struct Round {
     uint8 status; // 0-Created, 1-Started, 2-Drawn, 3-Finished, 4-Closed
 }
 
-struct AppStorage {
-    uint32 count;
-    mapping(uint32 => Round) rounds;
-    mapping(uint256 => uint32) requests;
-    // Portion of distribute
-    uint32 portionPrize;
-    uint32 portionTresury;
-    // Membership
-    address token;
-    uint256 threshold;
-    // VRF settings
-    address VRFcoordinator;
-    uint64  VRFsubscription;
-    bytes32 VRFhash;
+library AppStorage {
+    struct ConfigStorage {
+        uint32 portionPrize;        // Portion of prize
+        uint32 portionTresury;      // Portion of tresury
+
+        address token;              // Membership token
+        uint256 threshold;          // Membership threshold
+    }
+
+    struct VRFStorage {
+        address coordinator;
+        uint64  subscription;
+        bytes32 keyhash;
+        mapping(uint256 => uint32) requests;
+    }
+
+    struct CompetitionStorage {
+        uint32 count;
+        mapping(uint32 => Round) rounds;
+    }
+
+	bytes32 constant STORAGE_CONFIG = keccak256('wingame/storage/config');
+	function getConfigStorage() internal pure returns (ConfigStorage storage s) {
+		bytes32 position = STORAGE_CONFIG;
+		assembly {
+			s.slot := position
+		}
+	}
+    
+	bytes32 constant STORAGE_VRF = keccak256('wingame/storage/VRF');
+	function getVRFStorage() internal pure returns (VRFStorage storage s) {
+		bytes32 position = STORAGE_VRF;
+		assembly {
+			s.slot := position
+		}
+	}
+
+	bytes32 constant STORAGE_COMPETITION = keccak256('wingame/storage/competition');
+	function getCompetitionStorage() internal pure returns (CompetitionStorage storage s) {
+		bytes32 position = STORAGE_COMPETITION;
+		assembly {
+			s.slot := position
+		}
+	}
 }

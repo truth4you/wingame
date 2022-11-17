@@ -1,46 +1,6 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "F:\\Workspace\\50_WIN\\game\\contracts\\Competition.sol": {
-      "lastModificationDate": 1667238238166,
-      "contentHash": "f63e10ad669494afec152d792215d2b6",
-      "sourceName": "contracts/Competition.sol",
-      "solcConfig": {
-        "version": "0.8.13",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
-        "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol",
-        "@chainlink/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol",
-        "@chainlink/contracts/src/v0.8/VRFConsumerBaseV2.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "Competitions"
-      ]
-    },
     "F:\\Workspace\\50_WIN\\game\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\IERC20.sol": {
       "lastModificationDate": 1668536149701,
       "contentHash": "ad7c2d0af148c8f9f097d65deeb4da6b",
@@ -404,8 +364,8 @@
       ]
     },
     "F:\\Workspace\\50_WIN\\game\\contracts\\facets\\CompetitionFacet.sol": {
-      "lastModificationDate": 1668611988400,
-      "contentHash": "d1349b91f6a1b10b34489e007a3b9834",
+      "lastModificationDate": 1668664796816,
+      "contentHash": "b18bf36cb75d3ce1c1d87e1f8d0f258e",
       "sourceName": "contracts/facets/CompetitionFacet.sol",
       "solcConfig": {
         "version": "0.8.13",
@@ -431,22 +391,22 @@
         }
       },
       "imports": [
+        "@solidstate/contracts/access/ownable/OwnableInternal.sol",
         "../libraries/AppStorage.sol",
-        "../libraries/LibDiamond.sol",
         "@openzeppelin/contracts/token/ERC20/IERC20.sol",
         "@chainlink/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol",
         "hardhat/console.sol"
       ],
       "versionPragmas": [
-        "0.8.13"
+        "^0.8.0"
       ],
       "artifacts": [
         "CompetitionFacet"
       ]
     },
     "F:\\Workspace\\50_WIN\\game\\contracts\\libraries\\AppStorage.sol": {
-      "lastModificationDate": 1668547684951,
-      "contentHash": "79c9d9e248037ab6671efeaa3aa74228",
+      "lastModificationDate": 1668664805581,
+      "contentHash": "2e331513f9f317d67c140dc6294b63f4",
       "sourceName": "contracts/libraries/AppStorage.sol",
       "solcConfig": {
         "version": "0.8.13",
@@ -473,760 +433,10 @@
       },
       "imports": [],
       "versionPragmas": [
-        "0.8.13"
-      ],
-      "artifacts": []
-    },
-    "F:\\Workspace\\50_WIN\\game\\contracts\\libraries\\LibDiamond.sol": {
-      "lastModificationDate": 1668547428804,
-      "contentHash": "09d448b3c987cb74e339ff2bd4f26740",
-      "sourceName": "contracts/libraries/LibDiamond.sol",
-      "solcConfig": {
-        "version": "0.8.13",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "../interfaces/IDiamondCut.sol"
-      ],
-      "versionPragmas": [
-        "0.8.13"
+        "^0.8.0"
       ],
       "artifacts": [
-        "LibDiamond"
-      ]
-    },
-    "F:\\Workspace\\50_WIN\\game\\contracts\\interfaces\\IDiamondCut.sol": {
-      "lastModificationDate": 1668547441430,
-      "contentHash": "761ba9e50655dc36ee321209f7e63a3b",
-      "sourceName": "contracts/interfaces/IDiamondCut.sol",
-      "solcConfig": {
-        "version": "0.8.13",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "0.8.13"
-      ],
-      "artifacts": [
-        "IDiamondCut"
-      ]
-    },
-    "F:\\Workspace\\50_WIN\\game\\contracts\\facets\\DiamondCutFacet.sol": {
-      "lastModificationDate": 1668547451726,
-      "contentHash": "c1b81d8f79217ffcf655d39494bd2f6f",
-      "sourceName": "contracts/facets/DiamondCutFacet.sol",
-      "solcConfig": {
-        "version": "0.8.13",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "../interfaces/IDiamondCut.sol",
-        "../libraries/LibDiamond.sol"
-      ],
-      "versionPragmas": [
-        "0.8.13"
-      ],
-      "artifacts": [
-        "DiamondCutFacet"
-      ]
-    },
-    "F:\\Workspace\\50_WIN\\game\\contracts\\facets\\OwnershipFacet.sol": {
-      "lastModificationDate": 1668547461938,
-      "contentHash": "5f9c9d3eb18f719bf0512d1a49de0892",
-      "sourceName": "contracts/facets/OwnershipFacet.sol",
-      "solcConfig": {
-        "version": "0.8.13",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "../libraries/LibDiamond.sol",
-        "../interfaces/IERC173.sol"
-      ],
-      "versionPragmas": [
-        "0.8.13"
-      ],
-      "artifacts": [
-        "OwnershipFacet"
-      ]
-    },
-    "F:\\Workspace\\50_WIN\\game\\contracts\\interfaces\\IERC173.sol": {
-      "lastModificationDate": 1668547477618,
-      "contentHash": "44d7e9fabb625a523d3d5d3b75c98444",
-      "sourceName": "contracts/interfaces/IERC173.sol",
-      "solcConfig": {
-        "version": "0.8.13",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "0.8.13"
-      ],
-      "artifacts": [
-        "IERC173"
-      ]
-    },
-    "F:\\Workspace\\50_WIN\\game\\contracts\\facets\\DiamondLoupeFacet.sol": {
-      "lastModificationDate": 1668547466004,
-      "contentHash": "a2b39a6a5e097f949f5631ff98dba279",
-      "sourceName": "contracts/facets/DiamondLoupeFacet.sol",
-      "solcConfig": {
-        "version": "0.8.13",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "../libraries/LibDiamond.sol",
-        "../interfaces/IDiamondLoupe.sol",
-        "../interfaces/IERC165.sol"
-      ],
-      "versionPragmas": [
-        "0.8.13"
-      ],
-      "artifacts": [
-        "DiamondLoupeFacet"
-      ]
-    },
-    "F:\\Workspace\\50_WIN\\game\\contracts\\interfaces\\IDiamondLoupe.sol": {
-      "lastModificationDate": 1668547484427,
-      "contentHash": "5fa93483e2f9e9e17c946140aab77ff1",
-      "sourceName": "contracts/interfaces/IDiamondLoupe.sol",
-      "solcConfig": {
-        "version": "0.8.13",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "0.8.13"
-      ],
-      "artifacts": [
-        "IDiamondLoupe"
-      ]
-    },
-    "F:\\Workspace\\50_WIN\\game\\contracts\\interfaces\\IERC165.sol": {
-      "lastModificationDate": 1668547489466,
-      "contentHash": "dfb49d8003d94c2920463fb0218c63d9",
-      "sourceName": "contracts/interfaces/IERC165.sol",
-      "solcConfig": {
-        "version": "0.8.13",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "0.8.13"
-      ],
-      "artifacts": [
-        "IERC165"
-      ]
-    },
-    "F:\\Workspace\\50_WIN\\game\\contracts\\interfaces\\IERC4626.sol": {
-      "lastModificationDate": 1668524144112,
-      "contentHash": "bcfa2b6098fe20e32102af1664131600",
-      "sourceName": "contracts/interfaces/IERC4626.sol",
-      "solcConfig": {
-        "version": "0.8.13",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol",
-        "@openzeppelin/contracts-upgradeable/token/ERC20/IERC20Upgradeable.sol"
-      ],
-      "versionPragmas": [
-        "0.8.13"
-      ],
-      "artifacts": [
-        "IERC4626"
-      ]
-    },
-    "F:\\Workspace\\50_WIN\\game\\contracts\\interfaces\\ILendingPool.sol": {
-      "lastModificationDate": 1668524144113,
-      "contentHash": "142d4f60bfc97db2ef86258593b549cc",
-      "sourceName": "contracts/interfaces/ILendingPool.sol",
-      "solcConfig": {
-        "version": "0.8.13",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "0.8.13"
-      ],
-      "artifacts": [
-        "ILendingPool"
-      ]
-    },
-    "F:\\Workspace\\50_WIN\\game\\contracts\\interfaces\\IRewardsController.sol": {
-      "lastModificationDate": 1668524144113,
-      "contentHash": "b95fa67d1ef460d103df0d0c5566ea2e",
-      "sourceName": "contracts/interfaces/IRewardsController.sol",
-      "solcConfig": {
-        "version": "0.8.13",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "0.8.13"
-      ],
-      "artifacts": [
-        "IRewardsController"
-      ]
-    },
-    "F:\\Workspace\\50_WIN\\game\\contracts\\interfaces\\IStakingFacet.sol": {
-      "lastModificationDate": 1668524144113,
-      "contentHash": "b8cc93b20ebfa00809ed4f466e5c3bf6",
-      "sourceName": "contracts/interfaces/IStakingFacet.sol",
-      "solcConfig": {
-        "version": "0.8.13",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "0.8.13"
-      ],
-      "artifacts": [
-        "IStakingFacet"
-      ]
-    },
-    "F:\\Workspace\\50_WIN\\game\\contracts\\interfaces\\IERC1155.sol": {
-      "lastModificationDate": 1668524144110,
-      "contentHash": "2e967316900e0efbbe476403cbb0bcbf",
-      "sourceName": "contracts/interfaces/IERC1155.sol",
-      "solcConfig": {
-        "version": "0.7.6",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "0.7.6"
-      ],
-      "artifacts": [
-        "IERC1155"
-      ]
-    },
-    "F:\\Workspace\\50_WIN\\game\\contracts\\interfaces\\IERC1155Metadata_URI.sol": {
-      "lastModificationDate": 1668612350191,
-      "contentHash": "bfe12bdd8433c9d099d3bc6ed641cd37",
-      "sourceName": "contracts/interfaces/IERC1155Metadata_URI.sol",
-      "solcConfig": {
-        "version": "0.8.13",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "0.8.13"
-      ],
-      "artifacts": [
-        "IERC1155Metadata_URI"
-      ]
-    },
-    "F:\\Workspace\\50_WIN\\game\\contracts\\interfaces\\IERC1155TokenReceiver.sol": {
-      "lastModificationDate": 1668524144111,
-      "contentHash": "53a97fcdf96b5220b4a67375ad5be978",
-      "sourceName": "contracts/interfaces/IERC1155TokenReceiver.sol",
-      "solcConfig": {
-        "version": "0.7.6",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "0.7.6"
-      ],
-      "artifacts": [
-        "IERC1155TokenReceiver"
-      ]
-    },
-    "F:\\Workspace\\50_WIN\\game\\contracts\\interfaces\\IERC20.sol": {
-      "lastModificationDate": 1668524144112,
-      "contentHash": "0cf02f6f89fe52388cebda9b81ef91c3",
-      "sourceName": "contracts/interfaces/IERC20.sol",
-      "solcConfig": {
-        "version": "0.7.6",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "0.7.6"
-      ],
-      "artifacts": [
-        "IERC20"
-      ]
-    },
-    "F:\\Workspace\\50_WIN\\game\\contracts\\libraries\\LibERC20.sol": {
-      "lastModificationDate": 1668524144115,
-      "contentHash": "a369dc5aa6b23255d0522ab8cff2ef22",
-      "sourceName": "contracts/libraries/LibERC20.sol",
-      "solcConfig": {
-        "version": "0.7.6",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "../interfaces/IERC20.sol"
-      ],
-      "versionPragmas": [
-        "0.7.6"
-      ],
-      "artifacts": [
-        "LibERC20"
-      ]
-    },
-    "F:\\Workspace\\50_WIN\\game\\contracts\\interfaces\\IUniswapV2Pair.sol": {
-      "lastModificationDate": 1668524144114,
-      "contentHash": "73db2d13a54491f69fcdacf5d7396d50",
-      "sourceName": "contracts/interfaces/IUniswapV2Pair.sol",
-      "solcConfig": {
-        "version": "0.7.6",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "0.7.6"
-      ],
-      "artifacts": [
-        "IUniswapV2Pair"
-      ]
-    },
-    "F:\\Workspace\\50_WIN\\game\\contracts\\libraries\\LibMath.sol": {
-      "lastModificationDate": 1668524144115,
-      "contentHash": "8e2e23a9ac6f5ee578bf0757f653cab2",
-      "sourceName": "contracts/libraries/LibMath.sol",
-      "solcConfig": {
-        "version": "0.7.6",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "0.7.6"
-      ],
-      "artifacts": [
-        "LibMath"
-      ]
-    },
-    "F:\\Workspace\\50_WIN\\game\\contracts\\libraries\\LibMeta.sol": {
-      "lastModificationDate": 1668524144115,
-      "contentHash": "8991f194cc81a142aba920891cc6225c",
-      "sourceName": "contracts/libraries/LibMeta.sol",
-      "solcConfig": {
-        "version": "0.7.6",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "0.7.6"
-      ],
-      "artifacts": [
-        "LibMeta"
-      ]
-    },
-    "F:\\Workspace\\50_WIN\\game\\contracts\\libraries\\LibStrings.sol": {
-      "lastModificationDate": 1668524144116,
-      "contentHash": "f560aa46c920817d8b16ec0560607f0f",
-      "sourceName": "contracts/libraries/LibStrings.sol",
-      "solcConfig": {
-        "version": "0.7.6",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "0.7.6"
-      ],
-      "artifacts": [
-        "LibStrings"
+        "AppStorage"
       ]
     },
     "F:\\Workspace\\50_WIN\\game\\node_modules\\hardhat\\console.sol": {
@@ -1265,8 +475,8 @@
       ]
     },
     "F:\\Workspace\\50_WIN\\game\\contracts\\WinGame.sol": {
-      "lastModificationDate": 1668612785034,
-      "contentHash": "2c6f00416af9994f61d391451546e657",
+      "lastModificationDate": 1668667754377,
+      "contentHash": "7180ee5f5a59c71833e8c746dced4605",
       "sourceName": "contracts/WinGame.sol",
       "solcConfig": {
         "version": "0.8.13",
@@ -1292,22 +502,20 @@
         }
       },
       "imports": [
-        "./libraries/LibDiamond.sol",
-        "./interfaces/IDiamondLoupe.sol",
-        "./interfaces/IDiamondCut.sol",
+        "@solidstate/contracts/proxy/diamond/SolidStateDiamond.sol",
         "./libraries/AppStorage.sol"
       ],
       "versionPragmas": [
-        "0.8.13"
+        "^0.8.0"
       ],
       "artifacts": [
         "WinGame"
       ]
     },
-    "F:\\Workspace\\50_WIN\\game\\contracts\\facets\\CompetitionFacet1.sol": {
-      "lastModificationDate": 1668614239815,
-      "contentHash": "5e08ed549feb06079504c62d57e0d0b6",
-      "sourceName": "contracts/facets/CompetitionFacet1.sol",
+    "F:\\Workspace\\50_WIN\\game\\node_modules\\@solidstate\\contracts\\access\\ownable\\OwnableInternal.sol": {
+      "lastModificationDate": 1668662363637,
+      "contentHash": "984f057e855487d17a1b2ee8055f694f",
+      "sourceName": "@solidstate/contracts/access/ownable/OwnableInternal.sol",
       "solcConfig": {
         "version": "0.8.13",
         "settings": {
@@ -1332,17 +540,1099 @@
         }
       },
       "imports": [
-        "../libraries/AppStorage.sol",
-        "../libraries/LibDiamond.sol",
-        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
-        "@chainlink/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol",
-        "hardhat/console.sol"
+        "../../interfaces/IERC173.sol",
+        "../../utils/AddressUtils.sol",
+        "./IOwnableInternal.sol",
+        "./OwnableStorage.sol"
       ],
       "versionPragmas": [
-        "0.8.13"
+        "^0.8.8"
       ],
       "artifacts": [
-        "CompetitionFacet1"
+        "OwnableInternal"
+      ]
+    },
+    "F:\\Workspace\\50_WIN\\game\\node_modules\\@solidstate\\contracts\\interfaces\\IERC173.sol": {
+      "lastModificationDate": 1668662363455,
+      "contentHash": "fb91cbea8b5c9a1a381c28baad1fe2c2",
+      "sourceName": "@solidstate/contracts/interfaces/IERC173.sol",
+      "solcConfig": {
+        "version": "0.8.13",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC173Internal.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.8"
+      ],
+      "artifacts": [
+        "IERC173"
+      ]
+    },
+    "F:\\Workspace\\50_WIN\\game\\node_modules\\@solidstate\\contracts\\utils\\AddressUtils.sol": {
+      "lastModificationDate": 1668662361373,
+      "contentHash": "5578ce0595a76b1a637f494efcb7c4ac",
+      "sourceName": "@solidstate/contracts/utils/AddressUtils.sol",
+      "solcConfig": {
+        "version": "0.8.13",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./UintUtils.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.8"
+      ],
+      "artifacts": [
+        "AddressUtils"
+      ]
+    },
+    "F:\\Workspace\\50_WIN\\game\\node_modules\\@solidstate\\contracts\\access\\ownable\\IOwnableInternal.sol": {
+      "lastModificationDate": 1668662363536,
+      "contentHash": "1b4485ee11e314b89acfd1553a2381ba",
+      "sourceName": "@solidstate/contracts/access/ownable/IOwnableInternal.sol",
+      "solcConfig": {
+        "version": "0.8.13",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../interfaces/IERC173Internal.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.8"
+      ],
+      "artifacts": [
+        "IOwnableInternal"
+      ]
+    },
+    "F:\\Workspace\\50_WIN\\game\\node_modules\\@solidstate\\contracts\\access\\ownable\\OwnableStorage.sol": {
+      "lastModificationDate": 1668662363640,
+      "contentHash": "718cbf326463239269f29988ea71eda1",
+      "sourceName": "@solidstate/contracts/access/ownable/OwnableStorage.sol",
+      "solcConfig": {
+        "version": "0.8.13",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.8"
+      ],
+      "artifacts": [
+        "OwnableStorage"
+      ]
+    },
+    "F:\\Workspace\\50_WIN\\game\\node_modules\\@solidstate\\contracts\\interfaces\\IERC173Internal.sol": {
+      "lastModificationDate": 1668662363456,
+      "contentHash": "64e9b98233e6a0123e11ad7f0aad7590",
+      "sourceName": "@solidstate/contracts/interfaces/IERC173Internal.sol",
+      "solcConfig": {
+        "version": "0.8.13",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.8"
+      ],
+      "artifacts": [
+        "IERC173Internal"
+      ]
+    },
+    "F:\\Workspace\\50_WIN\\game\\node_modules\\@solidstate\\contracts\\utils\\UintUtils.sol": {
+      "lastModificationDate": 1668662363721,
+      "contentHash": "d4205a81f1124ba49f3dafed254450b2",
+      "sourceName": "@solidstate/contracts/utils/UintUtils.sol",
+      "solcConfig": {
+        "version": "0.8.13",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.8"
+      ],
+      "artifacts": [
+        "UintUtils"
+      ]
+    },
+    "F:\\Workspace\\50_WIN\\game\\node_modules\\@solidstate\\contracts\\access\\ownable\\SafeOwnableInternal.sol": {
+      "lastModificationDate": 1668662363706,
+      "contentHash": "50ff4e910cd5506811d50149103a5850",
+      "sourceName": "@solidstate/contracts/access/ownable/SafeOwnableInternal.sol",
+      "solcConfig": {
+        "version": "0.8.13",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ISafeOwnableInternal.sol",
+        "./OwnableInternal.sol",
+        "./OwnableStorage.sol",
+        "./SafeOwnableStorage.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.8"
+      ],
+      "artifacts": [
+        "SafeOwnableInternal"
+      ]
+    },
+    "F:\\Workspace\\50_WIN\\game\\node_modules\\@solidstate\\contracts\\access\\ownable\\ISafeOwnableInternal.sol": {
+      "lastModificationDate": 1668662363540,
+      "contentHash": "5eaac42e298cc2023122e792048dd4ae",
+      "sourceName": "@solidstate/contracts/access/ownable/ISafeOwnableInternal.sol",
+      "solcConfig": {
+        "version": "0.8.13",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IOwnableInternal.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.8"
+      ],
+      "artifacts": [
+        "ISafeOwnableInternal"
+      ]
+    },
+    "F:\\Workspace\\50_WIN\\game\\node_modules\\@solidstate\\contracts\\access\\ownable\\SafeOwnableStorage.sol": {
+      "lastModificationDate": 1668662363708,
+      "contentHash": "f272db4b13ee9877546b140796273c82",
+      "sourceName": "@solidstate/contracts/access/ownable/SafeOwnableStorage.sol",
+      "solcConfig": {
+        "version": "0.8.13",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.8"
+      ],
+      "artifacts": [
+        "SafeOwnableStorage"
+      ]
+    },
+    "F:\\Workspace\\50_WIN\\game\\node_modules\\@solidstate\\contracts\\access\\ownable\\IOwnable.sol": {
+      "lastModificationDate": 1668662363535,
+      "contentHash": "b3dfa912b96c3de89a3df204decdbbb2",
+      "sourceName": "@solidstate/contracts/access/ownable/IOwnable.sol",
+      "solcConfig": {
+        "version": "0.8.13",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../interfaces/IERC173.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.8"
+      ],
+      "artifacts": [
+        "IOwnable"
+      ]
+    },
+    "F:\\Workspace\\50_WIN\\game\\node_modules\\@solidstate\\contracts\\access\\ownable\\ISafeOwnable.sol": {
+      "lastModificationDate": 1668662363539,
+      "contentHash": "b0ac79f9086579a9e0a01ebb2637bf45",
+      "sourceName": "@solidstate/contracts/access/ownable/ISafeOwnable.sol",
+      "solcConfig": {
+        "version": "0.8.13",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IOwnable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.8"
+      ],
+      "artifacts": [
+        "ISafeOwnable"
+      ]
+    },
+    "F:\\Workspace\\50_WIN\\game\\node_modules\\@solidstate\\contracts\\proxy\\diamond\\ISolidStateDiamond.sol": {
+      "lastModificationDate": 1668662363543,
+      "contentHash": "cf376e8333dc19c15526118cd5b8aa2e",
+      "sourceName": "@solidstate/contracts/proxy/diamond/ISolidStateDiamond.sol",
+      "solcConfig": {
+        "version": "0.8.13",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../access/ownable/ISafeOwnable.sol",
+        "../../interfaces/IERC165.sol",
+        "./base/IDiamondBase.sol",
+        "./readable/IDiamondReadable.sol",
+        "./writable/IDiamondWritable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.8"
+      ],
+      "artifacts": [
+        "ISolidStateDiamond"
+      ]
+    },
+    "F:\\Workspace\\50_WIN\\game\\node_modules\\@solidstate\\contracts\\interfaces\\IERC165.sol": {
+      "lastModificationDate": 1668662363454,
+      "contentHash": "f531ace5d3a61cd556564912da6a9987",
+      "sourceName": "@solidstate/contracts/interfaces/IERC165.sol",
+      "solcConfig": {
+        "version": "0.8.13",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.8"
+      ],
+      "artifacts": [
+        "IERC165"
+      ]
+    },
+    "F:\\Workspace\\50_WIN\\game\\node_modules\\@solidstate\\contracts\\proxy\\diamond\\base\\IDiamondBase.sol": {
+      "lastModificationDate": 1668662363363,
+      "contentHash": "69a9304188e696abf1674ebb6d5b6be5",
+      "sourceName": "@solidstate/contracts/proxy/diamond/base/IDiamondBase.sol",
+      "solcConfig": {
+        "version": "0.8.13",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../IProxy.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.8"
+      ],
+      "artifacts": [
+        "IDiamondBase"
+      ]
+    },
+    "F:\\Workspace\\50_WIN\\game\\node_modules\\@solidstate\\contracts\\proxy\\diamond\\readable\\IDiamondReadable.sol": {
+      "lastModificationDate": 1668662363367,
+      "contentHash": "759ddad6935a2e27d94e22847bcdf583",
+      "sourceName": "@solidstate/contracts/proxy/diamond/readable/IDiamondReadable.sol",
+      "solcConfig": {
+        "version": "0.8.13",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.8"
+      ],
+      "artifacts": [
+        "IDiamondReadable"
+      ]
+    },
+    "F:\\Workspace\\50_WIN\\game\\node_modules\\@solidstate\\contracts\\proxy\\diamond\\writable\\IDiamondWritable.sol": {
+      "lastModificationDate": 1668662363370,
+      "contentHash": "89b99f434d2490bfe6387f9d59a6be0d",
+      "sourceName": "@solidstate/contracts/proxy/diamond/writable/IDiamondWritable.sol",
+      "solcConfig": {
+        "version": "0.8.13",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IDiamondWritableInternal.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.8"
+      ],
+      "artifacts": [
+        "IDiamondWritable"
+      ]
+    },
+    "F:\\Workspace\\50_WIN\\game\\node_modules\\@solidstate\\contracts\\proxy\\IProxy.sol": {
+      "lastModificationDate": 1668662363538,
+      "contentHash": "d811c7cce73fa850c713b5e57fa4b20c",
+      "sourceName": "@solidstate/contracts/proxy/IProxy.sol",
+      "solcConfig": {
+        "version": "0.8.13",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.8"
+      ],
+      "artifacts": [
+        "IProxy"
+      ]
+    },
+    "F:\\Workspace\\50_WIN\\game\\node_modules\\@solidstate\\contracts\\proxy\\diamond\\writable\\IDiamondWritableInternal.sol": {
+      "lastModificationDate": 1668662363372,
+      "contentHash": "ca737c6f934337bbd67382f22d6458db",
+      "sourceName": "@solidstate/contracts/proxy/diamond/writable/IDiamondWritableInternal.sol",
+      "solcConfig": {
+        "version": "0.8.13",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.8"
+      ],
+      "artifacts": [
+        "IDiamondWritableInternal"
+      ]
+    },
+    "F:\\Workspace\\50_WIN\\game\\node_modules\\@solidstate\\contracts\\proxy\\diamond\\writable\\DiamondWritableInternal.sol": {
+      "lastModificationDate": 1668662361984,
+      "contentHash": "c28827967721940d5c88af02c874873d",
+      "sourceName": "@solidstate/contracts/proxy/diamond/writable/DiamondWritableInternal.sol",
+      "solcConfig": {
+        "version": "0.8.13",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../../utils/AddressUtils.sol",
+        "../base/DiamondBaseStorage.sol",
+        "./IDiamondWritableInternal.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "DiamondWritableInternal"
+      ]
+    },
+    "F:\\Workspace\\50_WIN\\game\\node_modules\\@solidstate\\contracts\\proxy\\diamond\\base\\DiamondBaseStorage.sol": {
+      "lastModificationDate": 1668662361657,
+      "contentHash": "2965bd0287e509917f1cd93360f2c97a",
+      "sourceName": "@solidstate/contracts/proxy/diamond/base/DiamondBaseStorage.sol",
+      "solcConfig": {
+        "version": "0.8.13",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.8"
+      ],
+      "artifacts": [
+        "DiamondBaseStorage"
+      ]
+    },
+    "F:\\Workspace\\50_WIN\\game\\node_modules\\@solidstate\\contracts\\proxy\\diamond\\writable\\DiamondWritable.sol": {
+      "lastModificationDate": 1668662361818,
+      "contentHash": "5fbdfef6a6f4c1e8969054a8f2fd910d",
+      "sourceName": "@solidstate/contracts/proxy/diamond/writable/DiamondWritable.sol",
+      "solcConfig": {
+        "version": "0.8.13",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../../access/ownable/OwnableInternal.sol",
+        "../base/DiamondBaseStorage.sol",
+        "./IDiamondWritable.sol",
+        "./DiamondWritableInternal.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.8"
+      ],
+      "artifacts": [
+        "DiamondWritable"
+      ]
+    },
+    "F:\\Workspace\\50_WIN\\game\\node_modules\\@solidstate\\contracts\\proxy\\diamond\\SolidStateDiamond.sol": {
+      "lastModificationDate": 1668662363711,
+      "contentHash": "c62ad33ee85ae9988890063d7084c8e6",
+      "sourceName": "@solidstate/contracts/proxy/diamond/SolidStateDiamond.sol",
+      "solcConfig": {
+        "version": "0.8.13",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../access/ownable/Ownable.sol",
+        "../../access/ownable/SafeOwnable.sol",
+        "../../interfaces/IERC173.sol",
+        "../../introspection/ERC165.sol",
+        "./base/DiamondBase.sol",
+        "./readable/DiamondReadable.sol",
+        "./writable/DiamondWritable.sol",
+        "./ISolidStateDiamond.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.8"
+      ],
+      "artifacts": [
+        "SolidStateDiamond"
+      ]
+    },
+    "F:\\Workspace\\50_WIN\\game\\node_modules\\@solidstate\\contracts\\introspection\\ERC165.sol": {
+      "lastModificationDate": 1668662362733,
+      "contentHash": "23d263ca7b727796fbcabf85d7a4def1",
+      "sourceName": "@solidstate/contracts/introspection/ERC165.sol",
+      "solcConfig": {
+        "version": "0.8.13",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IERC165.sol",
+        "./ERC165Storage.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.8"
+      ],
+      "artifacts": [
+        "ERC165"
+      ]
+    },
+    "F:\\Workspace\\50_WIN\\game\\node_modules\\@solidstate\\contracts\\access\\ownable\\SafeOwnable.sol": {
+      "lastModificationDate": 1668662363705,
+      "contentHash": "39f1e5cec22624751ea1882d396a7c99",
+      "sourceName": "@solidstate/contracts/access/ownable/SafeOwnable.sol",
+      "solcConfig": {
+        "version": "0.8.13",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Ownable.sol",
+        "./ISafeOwnable.sol",
+        "./OwnableInternal.sol",
+        "./SafeOwnableInternal.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.8"
+      ],
+      "artifacts": [
+        "SafeOwnable"
+      ]
+    },
+    "F:\\Workspace\\50_WIN\\game\\node_modules\\@solidstate\\contracts\\access\\ownable\\Ownable.sol": {
+      "lastModificationDate": 1668662363634,
+      "contentHash": "b58042b14261fbc79840b74ec57b6830",
+      "sourceName": "@solidstate/contracts/access/ownable/Ownable.sol",
+      "solcConfig": {
+        "version": "0.8.13",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../interfaces/IERC173.sol",
+        "./IOwnable.sol",
+        "./OwnableInternal.sol",
+        "./OwnableStorage.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.8"
+      ],
+      "artifacts": [
+        "Ownable"
+      ]
+    },
+    "F:\\Workspace\\50_WIN\\game\\node_modules\\@solidstate\\contracts\\proxy\\diamond\\base\\DiamondBase.sol": {
+      "lastModificationDate": 1668662361605,
+      "contentHash": "b302c4a1fea7751e08b54283faca3bad",
+      "sourceName": "@solidstate/contracts/proxy/diamond/base/DiamondBase.sol",
+      "solcConfig": {
+        "version": "0.8.13",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../Proxy.sol",
+        "./IDiamondBase.sol",
+        "./DiamondBaseStorage.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.8"
+      ],
+      "artifacts": [
+        "DiamondBase"
+      ]
+    },
+    "F:\\Workspace\\50_WIN\\game\\node_modules\\@solidstate\\contracts\\proxy\\diamond\\readable\\DiamondReadable.sol": {
+      "lastModificationDate": 1668662361752,
+      "contentHash": "d3f8f93af506465c57a02f7fab4c4854",
+      "sourceName": "@solidstate/contracts/proxy/diamond/readable/DiamondReadable.sol",
+      "solcConfig": {
+        "version": "0.8.13",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../base/DiamondBaseStorage.sol",
+        "./IDiamondReadable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.8"
+      ],
+      "artifacts": [
+        "DiamondReadable"
+      ]
+    },
+    "F:\\Workspace\\50_WIN\\game\\node_modules\\@solidstate\\contracts\\introspection\\ERC165Storage.sol": {
+      "lastModificationDate": 1668662362751,
+      "contentHash": "50f177a2325f086fdd4c0c1a6abfa5d0",
+      "sourceName": "@solidstate/contracts/introspection/ERC165Storage.sol",
+      "solcConfig": {
+        "version": "0.8.13",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.8"
+      ],
+      "artifacts": [
+        "ERC165Storage"
+      ]
+    },
+    "F:\\Workspace\\50_WIN\\game\\node_modules\\@solidstate\\contracts\\proxy\\Proxy.sol": {
+      "lastModificationDate": 1668662363656,
+      "contentHash": "f82f3475f2a381e0c85446513c6d0cc8",
+      "sourceName": "@solidstate/contracts/proxy/Proxy.sol",
+      "solcConfig": {
+        "version": "0.8.13",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/AddressUtils.sol",
+        "./IProxy.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.8"
+      ],
+      "artifacts": [
+        "Proxy"
       ]
     }
   }
