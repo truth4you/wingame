@@ -25,6 +25,8 @@ library AppStorage {
         uint32 portionPrize;        // Portion of prize
         uint32 portionTresury;      // Portion of tresury
 
+        uint32 intervalDraw;        // Intervals between drawing in a round
+
         address token;              // Membership token
         uint256 threshold;          // Membership threshold
     }

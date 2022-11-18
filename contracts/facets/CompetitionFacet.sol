@@ -160,6 +160,7 @@ contract CompetitionFacet is OwnableInternal {
 
     function mine(uint32 _index) public view returns (uint32[] memory, uint32[] memory, uint256) {
         AppStorage.CompetitionStorage storage s = AppStorage.getCompetitionStorage();
+        AppStorage.ConfigStorage storage config = AppStorage.getConfigStorage();
         Round storage round = s.rounds[_index];
         if(round.accounts[msg.sender]==0) return (new uint32[](0), new uint32[](0), 0);
         uint32[] memory tickets = new uint32[](round.accounts[msg.sender]);
@@ -167,7 +168,7 @@ contract CompetitionFacet is OwnableInternal {
         uint256[] memory claims = prizes(_index);
         uint256 claimable = 0;
         uint32 j = 0;
-        uint32 count = (uint32(block.timestamp) - round.timeEnd) / 60;
+        uint32 count = (uint32(block.timestamp) - round.timeEnd) / config.intervalDraw;
         if(count > round.countSold) count = round.countSold;
         for(uint32 i = 0;i<round.countTotal;i++) {
             if(round.tickets[i]==msg.sender) {
@@ -184,8 +185,9 @@ contract CompetitionFacet is OwnableInternal {
 
     function result(uint32 _index) public view returns (uint32[] memory) {
         AppStorage.CompetitionStorage storage s = AppStorage.getCompetitionStorage();
+        AppStorage.ConfigStorage storage config = AppStorage.getConfigStorage();
         Round storage round = s.rounds[_index];
-        uint32 count = (uint32(block.timestamp) - round.timeEnd) / 60;
+        uint32 count = (uint32(block.timestamp) - round.timeEnd) / config.intervalDraw;
         if(count > round.countSold) count = round.countSold;
         uint32[] memory tickets = new uint32[](count);
         if(round.status!=3) return tickets;
