@@ -35,6 +35,11 @@ contract CompetitionFacet is OwnableInternal {
         config.threshold = _threshold;
     }
 
+    function updateInterval(uint32 _interval) public onlyOwner {
+        AppStorage.ConfigStorage storage config = AppStorage.getConfigStorage();
+        config.intervalDraw = _interval;
+    }
+
     function create(
         uint32 _countTotal,
         uint256 _price,
