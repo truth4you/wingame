@@ -4,6 +4,12 @@ const { deploy, getAt, deployDiamond } = require('./utils')
 
 let owner, addrs, WinGame, Competition, VRFCoordinator
 
+const toTimestamp = (date) => parseInt(date==undefined?new Date():new Date(date)/1000)
+const setBlockTime = async (date)=>{
+  await network.provider.send("evm_setNextBlockTimestamp", [toTimestamp(date)] )
+  await network.provider.send("evm_mine") 
+}
+
 describe("WinGame", () => {
   it("Deploy", async () => {
     [owner, ...addrs] = await ethers.getSigners()
@@ -39,25 +45,33 @@ describe("CompetitionFacet", () => {
       await (await VRFCoordinator.fulfillRandomWords(0, 0)).wait()
   })
   it("Finish", async () => {
-      await (await Competition.finish(0)).wait()
-      // console.log(ethers.utils.formatEther(await waffle.provider.getBalance(owner.address)))
+    await setBlockTime("2022-11-20 00:00:00")
+    await (await Competition.finish(0)).wait()
+    // console.log(ethers.utils.formatEther(await waffle.provider.getBalance(owner.address)))
+  })
+  it("Result", async () => {
+    for(let i = 1;i<=addrs.length;i++) {
+        const tm = `2022-11-20 00:${i>9?'':0}${i}:02`
+        await setBlockTime(tm)
+        console.log(tm, await Competition.result(0))
+    }
   })
   it("Claim", async () => {
-      let total = ethers.utils.parseEther("0")
-      const claims = []
-      for(const addr of addrs) {
-          let amount = await waffle.provider.getBalance(addr.address)
-          await (await Competition.connect(addr).claim(0)).wait()
-          amount = (await waffle.provider.getBalance(addr.address)).sub(amount) 
-          const info = await Competition.connect(addr).mine(0)
-          claims.push([
-              addr.address,
-              Number(ethers.utils.formatEther(amount)),
-              ...info
-          ])
-          total = total.add(info[2])
-      }
-      console.log(claims.sort((a, b) => a[1]>b[1]?-1:1))
-      console.log(ethers.utils.formatEther(total))
+    let total = ethers.utils.parseEther("0")
+    const claims = []
+    for(const addr of addrs) {
+        let amount = await waffle.provider.getBalance(addr.address)
+        await (await Competition.connect(addr).claim(0)).wait()
+        amount = (await waffle.provider.getBalance(addr.address)).sub(amount) 
+        const info = await Competition.connect(addr).mine(0)
+        claims.push([
+            addr.address,
+            Number(ethers.utils.formatEther(amount)),
+            ...info
+        ])
+        total = total.add(info[2])
+    }
+    console.log(claims.sort((a, b) => a[1]>b[1]?-1:1))
+    console.log(ethers.utils.formatEther(total))
   })
 })

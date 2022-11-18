@@ -167,11 +167,15 @@ contract CompetitionFacet is OwnableInternal {
         uint256[] memory claims = prizes(_index);
         uint256 claimable = 0;
         uint32 j = 0;
+        uint32 count = (uint32(block.timestamp) - round.timeEnd) / 60;
+        if(count > round.countSold) count = round.countSold;
         for(uint32 i = 0;i<round.countTotal;i++) {
             if(round.tickets[i]==msg.sender) {
                 tickets[j] = i;
-                positions[j] = round.result2[i];
-                claimable += claims[round.result2[i] - 1];
+                if(round.result2[i] <= count) {
+                    positions[j] = round.result2[i];
+                    claimable += claims[round.result2[i] - 1];
+                }
                 j++;
             }
         }
@@ -181,9 +185,11 @@ contract CompetitionFacet is OwnableInternal {
     function result(uint32 _index) public view returns (uint32[] memory) {
         AppStorage.CompetitionStorage storage s = AppStorage.getCompetitionStorage();
         Round storage round = s.rounds[_index];
-        uint32[] memory tickets = new uint32[](round.countSold);
+        uint32 count = (uint32(block.timestamp) - round.timeEnd) / 60;
+        if(count > round.countSold) count = round.countSold;
+        uint32[] memory tickets = new uint32[](count);
         if(round.status!=3) return tickets;
-        for(uint32 i = 0;i<round.countSold;i++) {
+        for(uint32 i = 0;i<count;i++) {
             tickets[i] = round.result1[i+1];
         }
         return tickets;

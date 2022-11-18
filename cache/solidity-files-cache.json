@@ -364,8 +364,8 @@
       ]
     },
     "F:\\Workspace\\50_WIN\\game\\contracts\\facets\\CompetitionFacet.sol": {
-      "lastModificationDate": 1668664796816,
-      "contentHash": "b18bf36cb75d3ce1c1d87e1f8d0f258e",
+      "lastModificationDate": 1668777921074,
+      "contentHash": "e0611d0c6f5f5d16875933483883d3cf",
       "sourceName": "contracts/facets/CompetitionFacet.sol",
       "solcConfig": {
         "version": "0.8.13",
