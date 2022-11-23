@@ -23,7 +23,7 @@ struct Round {
 library AppStorage {
     struct ConfigStorage {
         uint32 portionPrize;        // Portion of prize
-        uint32 portionTresury;      // Portion of tresury
+        uint32 portionTreasury;      // Portion of tresury
 
         uint32 intervalDraw;        // Intervals between drawing in a round
 

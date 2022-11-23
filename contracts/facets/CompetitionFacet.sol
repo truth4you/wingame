@@ -40,6 +40,16 @@ contract CompetitionFacet is OwnableInternal {
         config.intervalDraw = _interval;
     }
 
+    function updatePortionPrize(uint32 _portion) public onlyOwner {
+        AppStorage.ConfigStorage storage config = AppStorage.getConfigStorage();
+        config.portionPrize = _portion;
+    }
+
+    function updatePortionTreasury(uint32 _portion) public onlyOwner {
+        AppStorage.ConfigStorage storage config = AppStorage.getConfigStorage();
+        config.portionTreasury = _portion;
+    }
+
     function create(
         uint32 _countTotal,
         uint256 _price,
